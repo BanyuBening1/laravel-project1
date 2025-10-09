@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Student;
+use App\Models\Teacher;
 
-class StudentController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $students = Student::all();
+        $teachers = Teacher::all();
 
-        return view('student', ['title' => "Student", 'students' => $students]);
+        return view('teacher', ['title' => "Teacher", 'teachers' => $teachers]);
     }
 
     /**

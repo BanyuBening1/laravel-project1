@@ -12,17 +12,23 @@
           <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
             Name
           </th>
+          <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            Description
+          </th>
          
         </tr>
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
-       @foreach ( $classrooms as $classroom )
+       @foreach ( $subjects as $subject )
         <tr class="hover:bg-gray-100 transition-colors duration-200">
           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">
             {{$loop->iteration}}
           </td>
           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-            {{$classroom['name']}}
+            {{$subject['name']}}
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+            {{$subject['description']}}
           </td>
         </tr>
        @endforeach
