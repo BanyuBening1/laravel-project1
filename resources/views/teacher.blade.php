@@ -37,7 +37,7 @@
                   {{ $teacher->name }}
               </td>
               <td class="px-4 py-4 text-sm text-gray-700 whitespace-nowrap">
-                  {{ $teacher->subjects->name}}
+                  {{ $teacher->subject->name}}
               </td>
               <td class="px-4 py-4 text-sm text-gray-700 whitespace-nowrap">
                   {{ $teacher->email }}
