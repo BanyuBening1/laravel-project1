@@ -9,22 +9,22 @@
                     :icon="'<path d=\'M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z\'></path><path d=\'M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z\'></path>'" />
             </li>
             <li>
-                <x-admin.sidelink label="Dashboard" href="/dashboard" />
+                <x-admin.sidelink label="Dashboard" href="/admin/dashboard" />
             </li>
             <li>
                 <x-admin.sidelink label="Student" href="/admin/student" />
             </li>
             <li>
-                <x-admin.sidelink label="Classroom" href="/classroom" />
+                <x-admin.sidelink label="Classroom" href="/admin/classroom" /> 
             </li>
             <li>
-                <x-admin.sidelink label="Teacher" href="/teacher" />
+                <x-admin.sidelink label="Teacher" href="/admin/teacher" />
             </li>
             <li>
-                <x-admin.sidelink label="Subject" href="/subject" />
+                <x-admin.sidelink label="Subject" href="/admin/subject" />
             </li>
             <li>
-                <x-admin.sidelink label="Guardian" href="/guardian" />
+                <x-admin.sidelink label="Guardian" href="/admin/guardian" />
             </li>
         </ul>
     </div>

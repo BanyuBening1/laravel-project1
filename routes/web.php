@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController; 
 use App\Http\Controllers\HomeController;
@@ -9,7 +8,12 @@ use App\Http\Controllers\GuardianController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\SubjectController;
-use App\Models\Student; // <———— WAJIB ADA
+use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminStudentController;
+use App\Http\Controllers\Admin\AdminGuardianController;
+use App\Http\Controllers\Admin\AdminClassroomController;
+use App\Http\Controllers\Admin\AdminTeacherController;
+use App\Http\Controllers\Admin\AdminSubjectController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
@@ -21,13 +25,15 @@ Route::get('/classroom', [ClassroomController::class, 'index']);
 Route::get('/teacher', [TeacherController::class, 'index']);
 Route::get('/subject', [SubjectController::class, 'index']);
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
+Route::prefix('admin')->name('admin.')->group(function () {
+
+    Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
+
+    Route::resource('student', AdminStudentController::class);
+    Route::resource('guardian', AdminGuardianController::class);
+    Route::resource('classroom', AdminClassroomController::class);
+    Route::resource('teacher', AdminTeacherController::class);
+    Route::resource('subject', AdminSubjectController::class);
+
 });
 
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/student', function () {
-        $students = Student::with('classroom')->get();
-        return view('admin.student.index', compact('students'));
-    })->name('student.index');
-});
